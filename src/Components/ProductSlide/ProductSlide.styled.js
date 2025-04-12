@@ -19,9 +19,8 @@ export const ProductList = styled.div`
   scroll-behavior: smooth;
   padding: 10px 0;
 
-  /* 🔽 Custom thin scrollbar */
   &::-webkit-scrollbar {
-    height: 3px; /* very thin */
+    height: 3px;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -36,8 +35,8 @@ export const ProductList = styled.div`
 
 export const ProductImage = styled.img`
   width: 180px;
-  height: auto;              
-  object-fit: contain;      
+  height: auto;
+  object-fit: contain;
   flex-shrink: 0;
   border-radius: 5px;
 `;

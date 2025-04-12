@@ -9,8 +9,8 @@ export const Nav = styled.nav`
   color: #fff;
 
   > *:hover {
-  outline:1px solid white;
-  padding:1px;
+    outline: 1px solid white;
+    padding: 1px;
   }
 `;
 
@@ -160,7 +160,6 @@ export const NavBottom = styled.div`
   background-color: #232f3e;
   color: #fff;
   font-size: 14px;
-  //   cursor: pointer;
 
   @media only screen and (max-width: 600px) {
     gap: 10px;
@@ -184,7 +183,6 @@ export const NavBottomItem = styled.div`
   cursor: pointer;
   padding: 2px 2px;
   color: #fff;
-//   border:2px solid red;
   margin-right: 10px;
 
   img {
@@ -192,33 +190,23 @@ export const NavBottomItem = styled.div`
   }
 
   p {
-    margin-right:10px;
+    margin-right: 10px;
   }
 
   &:hover {
     outline: 1px solid white;
-    
   }
 `;
 
 export const NavBottomText = styled.p`
-//   margin: 0 4px;
   cursor: pointer;
   font-weight: 600;
-  padding:2px 2px;
-//   border:1px solid green;
+  padding: 2px 2px;
 
-  @media screen (max-widht:600px)
-  {
-
-  
+  @media screen (max-widht:600px) {
   }
 
   &:hover {
     outline: 1px solid white;
-    // padding: 4px 4px;
-
-
-
   }
 `;

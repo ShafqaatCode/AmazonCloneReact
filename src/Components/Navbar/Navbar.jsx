@@ -11,9 +11,9 @@ import {
   NavLanguage,
   NavText,
   NavCart,
-    NavBottom,
-    NavBottomItem,
-    NavBottomText,
+  NavBottom,
+  NavBottomItem,
+  NavBottomText,
 } from "./Navbar.styled.js";
 
 import amazonLogo from "../../assets/amazon_logo.png";
@@ -58,8 +58,7 @@ const Navbar = () => {
         <NavText>
           <p>Hello, Sign In</p>
           <h1>
-            Account & Lists{" "}
-            <img src={dropdownIcon} width="8px" alt="Dropdown" />
+            Account & Lists <img src={dropdownIcon} width="8px" alt="Dropdown" />
           </h1>
         </NavText>
 
@@ -79,7 +78,6 @@ const Navbar = () => {
           <img src={Menu_Bars} alt="hello" />
           <NavBottomText>All</NavBottomText>
         </NavBottomItem>
-
         <NavBottomText>Today's Deals</NavBottomText>
         <NavBottomText>Prime Video</NavBottomText>
         <NavBottomText>Customer Service</NavBottomText>

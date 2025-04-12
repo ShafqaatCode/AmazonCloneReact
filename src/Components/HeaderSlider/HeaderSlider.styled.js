@@ -14,8 +14,8 @@ export const SliderControls = styled.a`
   color: #0000004f;
   text-decoration: none;
   padding: 5vh 1vw;
-  font-weight: 600;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
 `;
 
@@ -29,15 +29,15 @@ export const ControlNext = styled(SliderControls)`
 
 export const SliderImageContainer = styled.ul`
   display: flex;
-  overflow-y: hidden;
   overflow: hidden;
-  padding: 0;
+  overflow-y: hidden;
+  list-style-type: none;
   margin: 0;
-  list-style: none;
+  padding: 0;
 `;
 
 export const SliderImage = styled.img`
+  display: none;
   max-width: 100%;
   mask-image: linear-gradient(to bottom, #000000 50%, transparent 100%);
-  display: none;
 `;

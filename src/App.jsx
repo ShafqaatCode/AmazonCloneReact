@@ -9,6 +9,8 @@ import theme from "./Styles/theme";
 import HeaderSlider from "./Components/HeaderSlider/HeaderSlider";
 import ProductSlider from "./Components/ProductSlide/ProductSlide";
 import ProductSliderTemplate from "./Components/ProductSliderTemplate/ProductSliderTemplate";
+import ProductGrid from "./Components/ProductBoxs/ProductGrid";
+import Footer from "./Components/Footer/Footer";
 
 
 
@@ -34,8 +36,12 @@ function App() {
       <GlobalStyles />
         <Navbar />
         <HeaderSlider />
+        <ProductGrid />
         <ProductSlider />
         <ProductSliderTemplate title="Hello world" images={images} />
+
+        <Footer />
+
     
     </ThemeProvider>
   );

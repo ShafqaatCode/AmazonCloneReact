@@ -8,18 +8,20 @@ import {
 } from './ProductSlide.styled';
 
 const ProductSlider = () => {
-  const scrollRef = useRef();
+  const sliderRef = useRef();
 
-  const scroll = (direction) => {
-    const scrollAmount = 300;
-    if (direction === 'left') {
-      scrollRef.current.scrollLeft -= scrollAmount;
-    } else {
-      scrollRef.current.scrollLeft += scrollAmount;
+  const scroll = (dir) => {
+    const distance = 300;
+    if (sliderRef.current) {
+      if (dir === 'left') {
+        sliderRef.current.scrollLeft -= distance;
+      } else {
+        sliderRef.current.scrollLeft += distance;
+      }
     }
   };
 
-  const images = [
+  const productImages = [
     '/src/assets/passets/kids1.jpg',
     '/src/assets/passets/kids2.jpg',
     '/src/assets/passets/kids3.jpg',
@@ -34,12 +36,12 @@ const ProductSlider = () => {
 
   return (
     <SliderContainer>
-      <h2>Top Sellers in Toys For you</h2>
+      <h2>Top Sellers in Toys For You</h2>
       <ArrowWrapper>
         <ArrowButton onClick={() => scroll('left')}>&#10094;</ArrowButton>
-        <ProductList ref={scrollRef}>
-          {images.map((img, index) => (
-            <ProductImage key={index} src={img} alt={`product-${index}`} />
+        <ProductList ref={sliderRef}>
+          {productImages.map((src, i) => (
+            <ProductImage key={i} src={src} alt={`product-${i}`} />
           ))}
         </ProductList>
         <ArrowButton onClick={() => scroll('right')}>&#10095;</ArrowButton>
