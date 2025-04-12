@@ -5,7 +5,7 @@ import {
   ProductImage,
   ArrowWrapper,
   ArrowButton,
-} from './ProductSlider.styled';
+} from '../ProductSlide/ProductSlide.styled.js';
 
 const ProductSliderTemplate = ({ title, images }) => {
   const scrollRef = React.useRef(null);
