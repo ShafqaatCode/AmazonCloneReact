@@ -20,7 +20,7 @@ const BoxRowWrapper = styled.div`
 
 const BoxRow = ({ boxes , isTop }) => {
   return (
-    <BoxRowWrapper isTop>
+    <BoxRowWrapper isTop = {isTop}>
       {boxes.map((box, index) => (
         <ProductBox key={index} {...box} />
       ))}

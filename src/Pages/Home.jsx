@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
       <HeaderSlider />
-      <ProductGrid boxes={GeneralboxesData} />
+      <ProductGrid boxes={GeneralboxesData} isTop={true} />
 
       <ProductSliderTemplate title="Hello world" images={kidsimages} />
       <ProductGrid boxes={BeautyBoxes} />
