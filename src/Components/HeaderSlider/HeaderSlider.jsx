@@ -8,14 +8,14 @@ import {
 } from "./HeaderSlider.styled.js";
 
 const imageList = [
-
-  "/src/assets/header0.jpg",
-  "/src/assets/header4.jpg",
-  "/src/assets/header3.jpg",
-  "/src/assets/header4.jpg",
-  "/src/assets/header1.jpg",
-  "/src/assets/header2.jpg",
+  "/images/header0.jpg",
+  "/images/header4.jpg",
+  "/images/header3.jpg",
+  "/images/header4.jpg",
+  "/images/header1.jpg",
+  "/images/header2.jpg",
 ];
+
 
 const HeaderSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
