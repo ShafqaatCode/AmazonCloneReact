@@ -12,7 +12,8 @@ import ProductSliderTemplate from "./Components/ProductSliderTemplate/ProductSli
 import ProductGrid from "./Components/ProductBoxs/ProductGrid";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Pages/Home";
-import BotFooter from "./Components/Footer/BottomFooter";
+
+import BottomFooter from "./Components/Footer/BottomFooter"
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,7 +25,7 @@ function App() {
       <Home />
 
       <Footer />
-      <BotFooter />
+      <BottomFooter />
     </ThemeProvider>
   );
 }
