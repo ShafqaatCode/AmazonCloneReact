@@ -12,7 +12,7 @@ const FooterWrapper = styled.footer`
   font-size: 20px;
 `;
 
-// This section holds all the columns of links
+
 const LinkSection = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -29,11 +29,11 @@ const LinkSection = styled.div`
   }
 `;
 
-// each column of links
+
 const Column = styled.div`
   max-width: 200px;
   margin: 0;
-  // border: 1px dashed yellow; // used for layout debugging
+  // border: 1px dashed yellow;
 `;
 
 const Heading = styled.h3`
@@ -56,7 +56,7 @@ const FooterLink = styled.a`
   }
 `;
 
-// Bottom strip (logo + language/currency/location)
+
 const BottomFooter = styled.div`
   display: flex;
   justify-content: center;
@@ -77,7 +77,7 @@ const FooterImg = styled.img`
 const ButtonGroup = styled.div`
   display: flex;
   gap: 15px;
-  // Might later wrap on smaller screens
+  
 `;
 
 const FooterButton = styled.button`
@@ -137,7 +137,7 @@ const footerSections = [
   },
 ];
 
-// ===================== Footer Component =====================
+
 const Footer = () => {
   return (
     <FooterWrapper>
@@ -155,13 +155,10 @@ const Footer = () => {
         ))}
       </LinkSection>
 
-      {/* Bottom Bar */}
       <BottomFooter>
-        {/* NOTE: might want to switch to dynamic src later */}
         <FooterImg src="/src/assets/amazon_logo.png" alt="Amazon Logo" />
-        
+
         <ButtonGroup>
-          {/* This button uses a globe icon from react-icons */}
           <FooterButton>
             <TbWorld /> English
           </FooterButton>
