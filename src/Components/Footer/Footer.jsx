@@ -1,83 +1,100 @@
 import React from "react";
 import styled from "styled-components";
-
+import { TbWorld } from "react-icons/tb";
 
 const FooterWrapper = styled.footer`
-  background: #131921;
+  background-color: #131921;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const TopFooter = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  width: 100%;
-  max-width: 1200px;
-  flex-wrap: wrap;
-`;
-
-const Logo = styled.img`
-  width: 100px;
-`;
-
-const FooterText = styled.p`
-  font-size: 14px;
-  margin: 10px 0;
-`;
-
-const ButtonGroup = styled.div`
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-`;
-
-const FooterButton = styled.button`
-  background-color: transparent;
-  color: white;
-  border: 1px solid rgb(138, 138, 130);
-  padding: 5px;
-  cursor: pointer;
-
-  &:hover {
-    border: 2px solid yellow;
-  }
+  font-size: 20px;
 `;
 
 const LinkSection = styled.div`
   display: flex;
   flex-wrap: wrap;
-  background-color: #0f1111;
-  justify-content: center;
-  padding: 50px;
-  gap: 50px;
-  width: 100%;
+  // border:2px solid red;
+  justify-content: space-between;
+  padding: 40px 50px;
+  // background-color: #232f3e;
+  width: 85%;
+
+  @media (max-width: 700px)
+  {
+    padding: 30px 20px ;
+    border:2px solid red;
+    // flex-wrap: nowrap;
+    flex-direction: column;
+    margin: 0;
+    width:100%;
+  }
 `;
 
 const Column = styled.div`
   max-width: 200px;
+  // border:2px solid red;
+  margin: 0 0;
 `;
 
 const Heading = styled.h3`
-  margin: 20px 0;
-  font-size: 16px;
+  margin: 10px 0;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
 `;
 
 const FooterLink = styled.a`
   display: block;
   font-size: 14px;
-  color: gray;
-  margin: 5px 0;
+  color: #ddd;
+  margin: 10px 0px;
+  // border:2px solid red;
   text-decoration: none;
+  font-weight:600;
 
   &:hover {
     text-decoration: underline;
   }
 `;
 
+const BottomFooter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 50px;
+  background-color: #232f3e;
+  color: #fff;
+  width: 100%;
+  flex-wrap: wrap;
+  gap:40px;
+  // border:2px solid red;
+
+`;
+
+const FooterImg = styled.img`
+  width:80px;
+  height:auto;
+
+`;
+
+const ButtonGroup = styled.div`
+  display: flex;
+  gap: 15px;
+`;
+
+const FooterButton = styled.button`
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #d1d1d1;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+
+  &:hover {
+    border: 1px solid #fff;
+  }
+`;
 
 const footerColumns = [
   {
@@ -101,7 +118,7 @@ const footerColumns = [
       "Shop with Points",
       "About Amazon",
       "Reload Your Balance",
-      "Amazon Currency Convertor",
+      "Amazon Currency Converter",
     ],
   },
   {
@@ -116,12 +133,11 @@ const footerColumns = [
   },
 ];
 
-// ===================== Component =====================
+// ===================== Component 
 const Footer = () => {
   return (
     <FooterWrapper>
-      
-
+      {/* Footer Links */}
       <LinkSection>
         {footerColumns.map((section, idx) => (
           <Column key={idx}>
@@ -135,15 +151,16 @@ const Footer = () => {
         ))}
       </LinkSection>
 
-      <TopFooter>
-        <Logo src="assets/amazon_logo.png" alt="Amazon Logo" />
-        <FooterText>© 1996-2025, Amazon.com, Inc. or its affiliates</FooterText>
+      {/* Bottom Footer */}
+      <BottomFooter>
+        <FooterImg src="/src/assets/amazon_logo.png" />
         <ButtonGroup>
-          <FooterButton>English</FooterButton>
-          <FooterButton>USD - US Dollar</FooterButton>
-          <FooterButton>United States</FooterButton>
+          <FooterButton><TbWorld/> English</FooterButton>
+          <FooterButton>$ USD - US Dollar</FooterButton>
+          <FooterButton>
+            United States</FooterButton>
         </ButtonGroup>
-      </TopFooter>
+      </BottomFooter>
     </FooterWrapper>
   );
 };
