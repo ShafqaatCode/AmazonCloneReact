@@ -15,7 +15,7 @@ const FooterWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  border:2px solid red;
+  // border:2px solid red;
 `;
 
 const Column = styled.ul`
