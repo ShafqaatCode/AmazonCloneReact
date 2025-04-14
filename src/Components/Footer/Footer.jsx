@@ -156,7 +156,7 @@ const Footer = () => {
       </LinkSection>
 
       <BottomFooter>
-        <FooterImg src="/src/assets/amazon_logo.png" alt="Amazon Logo" />
+        <FooterImg src="/images/amazon_logo.png" alt="Amazon Logo" />
 
         <ButtonGroup>
           <FooterButton>
