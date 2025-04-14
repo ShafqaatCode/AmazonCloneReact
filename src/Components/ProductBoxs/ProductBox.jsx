@@ -9,14 +9,15 @@ const BoxCol = styled.div`
   padding: 15px 20px;
   min-width: 300px;
   max-width: 24%;
-  min-height: 380px;
-  height: 380px;
+  min-height: 360px;
+  height: 360px;
   box-sizing: border-box;
   z-index: 1;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 
   @media (max-width: 992px) {
     max-width: 48%;
+    min-height:400px;
   }
 
   @media (max-width: 600px) {

@@ -8,6 +8,8 @@ import {
 } from "./HeaderSlider.styled.js";
 
 const imageList = [
+
+  "/src/assets/header0.jpg",
   "/src/assets/header4.jpg",
   "/src/assets/header3.jpg",
   "/src/assets/header4.jpg",

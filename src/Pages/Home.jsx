@@ -11,10 +11,11 @@ function Home() {
       <HeaderSlider />
       <ProductGrid boxes={GeneralboxesData} isTop={true} />
 
-      <ProductSliderTemplate title="Hello world" images={kidsimages} />
+      <ProductSliderTemplate title="Top Sellings in Kids Section" images={kidsimages} />
       <ProductGrid boxes={BeautyBoxes} />
       <ProductSliderTemplate title = "Top picks in Pakistan" images={TopPakistani} />
       <ProductSliderTemplate title = "Top Games" images={TopGames} />
+      
     </>
   );
 }

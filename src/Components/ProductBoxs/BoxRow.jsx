@@ -15,6 +15,7 @@ const BoxRowWrapper = styled.div`
 
   @media (max-width: 992px) {
     margin-top: ${({ isTop }) => (isTop ? '0' : '20px')};
+    justify-content:center;
   }
 `;
 
