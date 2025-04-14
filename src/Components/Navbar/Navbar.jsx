@@ -16,7 +16,7 @@ import {
   NavBottomText,
 } from "./Navbar.styled.js";
 
-import amazonLogo from "../../assets/amazon_logo.png";
+import amazonLogo from "/assets/amazon_logo.png";
 import locationIcon from "../../assets/location_icon.png";
 import dropdownIcon from "../../assets/dropdown_icon.png";
 import searchIcon from "../../assets/search_icon.png";
