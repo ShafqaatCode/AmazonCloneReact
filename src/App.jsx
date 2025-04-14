@@ -16,7 +16,7 @@ import Home from "./Pages/Home";
 import BottomFooter from "./Components/Footer/BottomFooter"
 
 function App() {
-  const [count, setCount] = useState(0);
+  
 
   return (
     <ThemeProvider theme={theme}>
