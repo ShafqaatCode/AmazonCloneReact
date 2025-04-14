@@ -30,8 +30,8 @@ const ProductSlider = () => {
     '/src/assets/passets/kids6.jpg',
     '/src/assets/product1-3.jpg',
     '/src/assets/product1-4.jpg',
-    '/src/assets/product1-5.jpg',
-    '/src/assets/product1-6.jpg',
+    '../assets/product1-5.jpg',
+    '../assets/product1-6.jpg',
   ];
 
   return (

@@ -19,8 +19,8 @@ export const TopPakistani = [
   // '/src/assets/TopPakistani/tp (5).jpg',
   "/src/assets/TopPakistani/tp9.jpg",
   "/src/assets/TopPakistani/tp6.jpg",
-  "/src/assets/TopPakistani/tp7.jpg",
-  "/src/assets/TopPakistani/tp8.jpg",
+  "../assets/TopPakistani/tp7.jpg",
+  "../assets/TopPakistani/tp8.jpg",
 ];
 
 export const TopGames = [
