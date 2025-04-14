@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-// ============ Styled Components ============
+
 
 const FooterNav = styled.nav`
   background-color: #232f3e;
@@ -23,13 +23,13 @@ const Column = styled.ul`
   padding: 0;
   margin: 10px 15px;
   flex: 1 1 200px;
-  border:2px solid red;
+  // border:2px solid red;
   min-width: 180px;
 `;
 
 const FooterItem = styled.li`
   margin-bottom: 14px;
-  border:2px solid pink;
+  // border:2px solid pink;
 `;
 
 const FooterLink = styled.a`
@@ -263,7 +263,7 @@ const AmazonStyledFooter = () => {
           <a href="#">Consumer Health Data Privacy Disclosure</a>|
           <a href="#">Your Ads Privacy Choices</a>
         </LegalLinks>
-        <div>© 1996–2025, Amazon.com, Inc. or its affiliates</div>
+        <div>© 1996–2025, Amazon.com, Inc. or its affiliates shafqaat</div>
       </FooterLegal>
     </FooterNav>
   );
