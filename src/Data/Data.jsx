@@ -12,30 +12,30 @@ export const kidsimages = [
 ];
 
 export const TopPakistani = [
-  "/src/assets/TopPakistani/tp (1).jpg",
-  "/src/assets/TopPakistani/tp (2).jpg",
-  "/src/assets/TopPakistani/tp (3).jpg",
-  "/src/assets/TopPakistani/tp (4).jpg",
+  "/src/assets/TopPakistani/tp1.jpg",
+  "/src/assets/TopPakistani/tp2.jpg",
+  "/src/assets/TopPakistani/tp3.jpg",
+  "/src/assets/TopPakistani/tp4.jpg",
   // '/src/assets/TopPakistani/tp (5).jpg',
-  "/src/assets/TopPakistani/tp (6).jpg",
-  "/src/assets/TopPakistani/tp (7).jpg",
-  "/src/assets/TopPakistani/tp (8).jpg",
-  "/src/assets/TopPakistani/tp (9).jpg",
+  "/src/assets/TopPakistani/tp9.jpg",
+  "/src/assets/TopPakistani/tp6.jpg",
+  "/src/assets/TopPakistani/tp7.jpg",
+  "/src/assets/TopPakistani/tp8.jpg",
 ];
 
 export const TopGames = [
-  "/src/assets/VideoGames/vg (1).jpg",
-  "/src/assets/VideoGames/vg (2).jpg",
-  "/src/assets/VideoGames/vg (3).jpg",
-  "/src/assets/VideoGames/vg (4).jpg",
-  "/src/assets/VideoGames/vg (5).jpg",
-  "/src/assets/VideoGames/vg (6).jpg",
-  "/src/assets/VideoGames/vg (7).jpg",
-  "/src/assets/VideoGames/vg (8).jpg",
-  "/src/assets/VideoGames/vg (9).jpg",
-  "/src/assets/VideoGames/vg (10).jpg",
-  "/src/assets/VideoGames/vg (11).jpg",
-  "/src/assets/VideoGames/vg (12).jpg",
+  "/src/assets/VideoGames/vg1.jpg",
+  "/src/assets/VideoGames/vg2.jpg",
+  "/src/assets/VideoGames/vg3.jpg",
+  "/src/assets/VideoGames/vg4.jpg",
+  "/src/assets/VideoGames/vg5.jpg",
+  "/src/assets/VideoGames/vg6.jpg",
+  "/src/assets/VideoGames/vg6.jpg",
+  "/src/assets/VideoGames/vg7.jpg",
+  "/src/assets/VideoGames/vg8.jpg",
+  "/src/assets/VideoGames/vg1.jpg",
+  "/src/assets/VideoGames/vg2.jpg",
+  "/src/assets/VideoGames/vg2.jpg",
 ];
 
 export const GeneralboxesData = [

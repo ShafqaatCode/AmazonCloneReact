@@ -11,25 +11,20 @@ import ProductSlider from "./Components/ProductSlide/ProductSlide";
 import ProductSliderTemplate from "./Components/ProductSliderTemplate/ProductSliderTemplate";
 import ProductGrid from "./Components/ProductBoxs/ProductGrid";
 import Footer from "./Components/Footer/Footer";
-import Home from "./Pages/Home"
-
-
-
+import Home from "./Pages/Home";
+import BotFooter from "./Components/Footer/BottomFooter";
 
 function App() {
   const [count, setCount] = useState(0);
 
- 
-
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-        <Navbar />
-       <Home />
+      <Navbar />
+      <Home />
 
-        <Footer />
-
-    
+      <Footer />
+      <BotFooter />
     </ThemeProvider>
   );
 }
