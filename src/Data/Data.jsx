@@ -138,3 +138,46 @@ export const BeautyBoxes = [
     linkUrl: "/",
   },
 ];
+
+
+
+export const GamingMerchandise = [
+    {
+      title: "Gaming Merchandises",
+      images: [
+        { src: "/src/assets/passets/Beauty (1).jpg", label: "apperls" },
+        { src: "/src/assets/passets/Beauty (2).jpg", label: "hats" },
+        { src: "/src/assets/passets/Beauty (3).jpg", label: "action figuers" },
+        { src: "/src/assets/passets/Beauty (4).jpg", label: "Mugs" },
+      ],
+      linkText: "Shop More",
+      linkUrl: "/",
+    },
+  
+    {
+      title: "Toys for all Ages",
+      images: [
+        { src: "/src/assets/passets/watch1.jpg", label: "ride on|s" },
+        { src: "/src/assets/passets/watch2.jpg", label: "Buildings" },
+        { src: "/src/assets/passets/watch3.jpg", label: "Swim pools" },
+        { src: "/src/assets/passets/watch4.jpg", label: "Dolls" },
+      ],
+      linkText: "Shop More",
+      linkUrl: "/",
+    },
+  
+    {
+      title: "Gifts For Mother's Day",
+      images: [{ src: "/src/assets/passets/sb1.jpg", label: "WatchY" }],
+      linkText: "Shop More",
+      linkUrl: "/",
+    },
+  
+    {
+      title: "Fill Your Basket with Joy",
+      images: [{ src: "/src/assets/passets/sb2.jpg", label: "WatchY" }],
+      linkText: "Shop More",
+      linkUrl: "/",
+    },
+  ];
+  
