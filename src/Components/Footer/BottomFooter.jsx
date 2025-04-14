@@ -10,11 +10,12 @@ const FooterNav = styled.nav`
 `;
 
 const FooterWrapper = styled.div`
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  border:2px solid red;
 `;
 
 const Column = styled.ul`
