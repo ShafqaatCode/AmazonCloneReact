@@ -1,39 +1,49 @@
-// src/styles/GlobalStyles.js
 import { createGlobalStyle } from 'styled-components';
 
-
 const GlobalStyles = createGlobalStyle`
-  
+
   *, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
 
   html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: ${({ theme }) => theme.colors.background};
-    color: ${({ theme }) => theme.colors.text};
+    background: ${({ theme }) => theme.colors?.background};
+    color: ${({ theme }) => theme.colors?.text};
     scroll-behavior: smooth;
+    line-height: 1.5;
   }
 
   a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
   }
 
-  ul {
-    list-style: none;
+  ul, ol {
+    list-style-type: none;
+    padding-left: 0;
   }
 
   img {
     max-width: 100%;
+    height: auto;
     display: block;
+  }
+
+  button, input, textarea {
+    font-family: inherit;
+    outline: none;
   }
 
   button {
     cursor: pointer;
-    font-family: inherit;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 `;
 

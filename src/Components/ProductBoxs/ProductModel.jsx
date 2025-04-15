@@ -12,6 +12,7 @@ const Backdrop = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 999;
+//   border:2px solid green;
 `;
 
 const Box = styled.div`
@@ -21,6 +22,7 @@ const Box = styled.div`
   width: 90%;
   max-width: 500px;
   text-align: center;
+  border:2px solid red;
 `;
 
 const Image = styled.img`
@@ -45,7 +47,7 @@ const ProductModal = ({ show, onClose, product }) => {
     return null;
   }
 
-  const title = product.label ? product.label : "Product Title";
+  const title = product.label ? product.label : `Title : ${product.src}`;
   const imgSrc = product.src;
   const imgAlt = product.alt || "Product";
 
@@ -55,6 +57,7 @@ const ProductModal = ({ show, onClose, product }) => {
         <Image src={imgSrc} alt={imgAlt} />
         <h3>{title}</h3>
         <p>This is a demo description for the selected products. .</p>
+        <p>Price: 100$</p>
         <Button onClick={onClose}>Close</Button>
       </Box>
     </Backdrop>
