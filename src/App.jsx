@@ -14,7 +14,7 @@ import Footer from "./Components/Footer/Footer";
 import Home from "./Pages/Home";
 
 import BottomFooter from "./Components/Footer/BottomFooter"
-import Sidebar from "./Components/SideBar/Sidebar";
+
 
 function App() {
   
@@ -24,7 +24,7 @@ function App() {
       <GlobalStyles />
       <Navbar />
       <Home />
-      <Sidebar />
+      
 
       <Footer />
       <BottomFooter />
