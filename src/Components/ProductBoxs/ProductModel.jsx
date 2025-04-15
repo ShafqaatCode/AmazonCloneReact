@@ -7,7 +7,9 @@ const Overlay = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(4px);
+//   border:2px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,36 +17,58 @@ const Overlay = styled.div`
 `;
 
 const ModalBox = styled.div`
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 36px 28px;
   width: 90%;
-  max-width: 480px;
-  box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
+  max-width: 460px;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.1);
   text-align: center;
+  font-family: "Inter", sans-serif;
+  transition: transform 0.3s ease;
 `;
 
 const ProductPic = styled.img`
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 14px;
   object-fit: cover;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 `;
 
 const CloseBtn = styled.button`
-  background-color: #007b7b;
+  background: #333;
   color: #fff;
   border: none;
-  padding: 10px 22px;
+  padding: 12px 26px;
   font-size: 14px;
-  border-radius: 5px;
+  font-weight: 500;
+  border-radius: 6px;
   cursor: pointer;
-  margin-top: 25px;
+  margin-top: 28px;
+  transition: all 0.3s ease;
 
   &:hover {
-    background-color: #005f5f;
+    background: #222;
   }
+`;
+
+const Title = styled.h3`
+  font-size: 22px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 12px;
+`;
+
+const Text = styled.p`
+  margin: 10px 0;
+  font-size: 15px;
+  color: #444;
+`;
+
+const Muted = styled(Text)`
+  color: #999;
 `;
 
 const ProductModal = ({ show, onClose, product }) => {
@@ -54,29 +78,32 @@ const ProductModal = ({ show, onClose, product }) => {
     <Overlay onClick={onClose}>
       <ModalBox onClick={(e) => e.stopPropagation()}>
         <ProductPic src={product.src} alt={product.label || "Product"} />
-        <h3>{product.label || "Unnamed Product"}</h3>
+        <Title>{product.label || "Unnamed Product"}</Title>
+
         {product.stars && (
-          <p style={{ marginTop: '8px' }}>
+          <Text>
             <strong>Rating:</strong> {product.stars} ⭐
-          </p>
+          </Text>
         )}
+
         {product.description && (
-          <p style={{ fontStyle: "italic", marginTop: '12px' }}>
-            {product.description}
-          </p>
+          <Text style={{ fontStyle: "italic" }}>{product.description}</Text>
         )}
+
         {product.price ? (
-          <p style={{ marginTop: '10px' }}>
+          <Text>
             <strong>Price:</strong> ${product.price}
-          </p>
+          </Text>
         ) : (
-          <p style={{ color: "#999" }}>Price not listed</p>
+          <Muted>Price not listed</Muted>
         )}
+
         {product.category && (
-          <p style={{ marginTop: '6px' }}>
+          <Text>
             <strong>Category:</strong> {product.category}
-          </p>
+          </Text>
         )}
+
         <CloseBtn onClick={onClose}>Close</CloseBtn>
       </ModalBox>
     </Overlay>
