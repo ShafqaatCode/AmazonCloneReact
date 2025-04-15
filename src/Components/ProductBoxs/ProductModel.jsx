@@ -52,9 +52,9 @@ const ProductModal = ({ show, onClose, product }) => {
     <Overlay onClick={onClose}>
       <Modal onClick={(e) => e.stopPropagation()}>
         <ModalImage src={product.src} alt={product.label || "Product"} />
-        <h3>{product.label}</h3>
+        <h3 className="my-5 bg-red-200">{product.label}</h3>
         {product.stars && <p><strong>Rating:</strong> {product.stars} ⭐</p>}
-      <div>  {product.description && <p style={{ fontStyle: "italic", marginBottom: "10px" }}>{product.description}</p>}</div>
+      <div className="bg-red-400">  {product.description && <p style={{ fontStyle: "italic", marginBottom: "10px" }}>{product.description}</p>}</div>
         {product.price && <p><strong>Price:</strong> ${product.price}</p>}
         {product.category && <p><strong>Category:</strong> {product.category}</p>}
         <CloseButton onClick={onClose}>Close</CloseButton>
