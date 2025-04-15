@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Nav,
   Logo,
@@ -14,6 +14,10 @@ import {
   NavBottom,
   NavBottomItem,
   NavBottomText,
+  Sidebar,
+  SidebarOverlay,
+  SidebarHeader,
+  SidebarSection,
 } from "./Navbar.styled.js";
 
 import amazonLogo from "../../assets/amazon_logo.png";
@@ -23,10 +27,150 @@ import searchIcon from "../../assets/search_icon.png";
 import usFlag from "../../assets/us_flag.png";
 import cartIcon from "../../assets/cart_icon.png";
 import Menu_Bars from "../../assets/menu_icon.png";
+import profileIcon from "../../assets/cart_icon.png"; // Add a profile icon in your assets
 
 const Navbar = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const sidebarData = {
+    "Digital Content & Devices": [
+      "Prime Video",
+      "Amazon Music",
+      "Kindle E-readers & Books",
+      "Amazon Appstore",
+    ],
+    "Shop by Department": [
+      "Electronics",
+      "Computers",
+      "Smart Home",
+      "Arts & Crafts",
+      "Automotive",
+      "Baby",
+      "Beauty and Personal Care",
+      "Women's Fashion",
+      "Men's Fashion",
+      "Girls' Fashion",
+      "Boys' Fashion",
+      "Health and Household",
+      "Home and Kitchen",
+      "Industrial and Scientific",
+      "Luggage",
+      "Movies & Television",
+      "Pet supplies",
+      "Software",
+      "Sports and Outdoors",
+      "Tools & Home Improvement",
+      "Toys and Games",
+      "Video Games",
+      "See all",
+    ],
+    "Programs & Features": [
+      "Gift Cards",
+      "Shop By Interest",
+      "Amazon Live",
+      "International Shopping",
+      "Amazon Second Chance",
+      "See all",
+    ],
+    "Help & Settings": [
+      "Your Account",
+      "English",
+      "United States",
+      "Customer Service",
+      "Sign in",
+    ],
+  };
+
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+
   return (
     <>
+      {/* Overlay */}
+      <SidebarOverlay isOpen={sidebarOpen} onClick={toggleSidebar} />
+
+      {/* Sidebar */}
+      <Sidebar isOpen={sidebarOpen}>
+        <SidebarHeader>
+          <img src={profileIcon} alt="Profile" />
+          Hello, Sign In
+        </SidebarHeader>
+
+        <SidebarSection>
+          <h4>Digital Content & Devices</h4>
+          <ul>
+            <li>
+              Prime Video <span className="arrow">{">"}</span>
+            </li>
+            <li>
+              Amazon Music <span className="arrow">{">"}</span>
+            </li>
+            <li>
+              Kindle E-readers & Books <span className="arrow">{">"}</span>
+            </li>
+            <li>
+              Amazon Appstore <span className="arrow">{">"}</span>
+            </li>
+          </ul>
+        </SidebarSection>
+
+        <SidebarSection>
+          <h4>Shop by Department</h4>
+          <ul>
+            <li>Electronics</li>
+            <li>Computers</li>
+            <li>Smart Home</li>
+            <li>Arts & Crafts</li>
+            <li>Automotive</li>
+            <li>Baby</li>
+            <li>Beauty and Personal Care</li>
+            <li>Women's Fashion</li>
+            <li>Men's Fashion</li>
+            <li>Girls' Fashion</li>
+            <li>Boys' Fashion</li>
+            <li>Health and Household</li>
+            <li>Home and Kitchen</li>
+            <li>Industrial and Scientific</li>
+            <li>Luggage</li>
+            <li>Movies & Television</li>
+            <li>Pet Supplies</li>
+            <li>Software</li>
+            <li>Sports and Outdoors</li>
+            <li>Tools & Home Improvement</li>
+            <li>Toys and Games</li>
+            <li>Video Games</li>
+            <li>
+              <strong>See All</strong>
+            </li>
+          </ul>
+        </SidebarSection>
+
+        <SidebarSection>
+          <h4>Programs & Features</h4>
+          <ul>
+            <li>Gift Cards</li>
+            <li>Shop By Interest</li>
+            <li>Amazon Live</li>
+            <li>International Shopping</li>
+            <li>Amazon Second Chance</li>
+            <li>
+              <strong>See All</strong>
+            </li>
+          </ul>
+        </SidebarSection>
+
+        <SidebarSection>
+          <h4>Help & Settings</h4>
+          <ul>
+            <li>Your Account</li>
+            <li>English</li>
+            <li>United States</li>
+            <li>Customer Service</li>
+            <li>Sign In</li>
+          </ul>
+        </SidebarSection>
+      </Sidebar>
+
+      {/* Main Nav */}
       <Nav>
         <a href="/">
           <Logo src={amazonLogo} alt="Amazon Logo" />
@@ -58,7 +202,8 @@ const Navbar = () => {
         <NavText>
           <p>Hello, Sign In</p>
           <h1>
-            Account & Lists <img src={dropdownIcon} width="8px" alt="Dropdown" />
+            Account & Lists{" "}
+            <img src={dropdownIcon} width="8px" alt="Dropdown" />
           </h1>
         </NavText>
 
@@ -73,9 +218,10 @@ const Navbar = () => {
         </NavCart>
       </Nav>
 
+      {/* Bottom Nav */}
       <NavBottom>
-        <NavBottomItem>
-          <img src={Menu_Bars} alt="hello" />
+        <NavBottomItem onClick={toggleSidebar}>
+          <img src={Menu_Bars} alt="menu" />
           <NavBottomText>All</NavBottomText>
         </NavBottomItem>
         <NavBottomText>Today's Deals</NavBottomText>

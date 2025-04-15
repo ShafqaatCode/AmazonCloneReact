@@ -210,3 +210,85 @@ export const NavBottomText = styled.p`
     outline: 1px solid white;
   }
 `;
+
+
+export const SidebarOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+`;
+
+
+
+export const SidebarHeader = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #232f3e;
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 18px;
+
+  img {
+    border-radius: 50%;
+    margin-right: 10px;
+    background: white;
+    padding: 5px;
+    width: 30px;
+  }
+`;
+export const Sidebar = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 350px; /* Increased width */
+  background-color: white;
+  color: black;
+  z-index: 100;
+  overflow-y: auto;
+  transform: ${({ isOpen }) =>
+    isOpen ? "translateX(0)" : "translateX(-100%)"};
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+`;
+
+export const SidebarSection = styled.div`
+  padding: 15px 20px;
+  border-bottom: 1px solid gray;
+
+  h4 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #111;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+
+    li {
+      font-size: 15px; /* Increased font size */
+      padding: 13px 20px; /* Padding applied */
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight:500;
+
+      &:hover {
+        background-color: #f0f0f0;
+        padding-left: 25px; /* subtle slide-in effect */
+      }
+
+      .arrow {
+        font-size: 14px;
+        color: gray;
+        font-weight:600;
+      }
+    }
+  }
+`;

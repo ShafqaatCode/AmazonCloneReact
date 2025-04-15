@@ -23,7 +23,7 @@ const LinkSection = styled.div`
 
   @media (max-width: 700px) {
     padding: 30px 20px;
-    border: 2px solid red; // debug - can remove
+    
     flex-direction: column;
     width: 100%;
   }
