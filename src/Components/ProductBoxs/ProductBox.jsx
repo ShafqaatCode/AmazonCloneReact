@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: white;
-  padding: 15px 20px;
+  background: #fff;
+  padding: 16px 20px;
   min-width: 300px;
   max-width: 24%;
   min-height: 360px;
@@ -25,14 +25,14 @@ const Wrapper = styled.div`
   }
 `;
 
-const GridLayout = styled.div`
+const ImageGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+  gap: 10px;
   flex-grow: 1;
 `;
 
-const Thumbs = styled.div`
+const ThumbItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +40,6 @@ const Thumbs = styled.div`
   img {
     width: 100%;
     max-width: 180px;
-    height: auto;
     object-fit: contain;
     border-radius: 4px;
   }
@@ -49,10 +48,11 @@ const Thumbs = styled.div`
     font-size: 13px;
     margin-top: 6px;
     text-align: left;
+    width: 100%;
   }
 `;
 
-const StyledLink = styled.a`
+const LinkAnchor = styled.a`
   font-size: 14px;
   color: #009999;
   font-weight: 500;
@@ -64,40 +64,39 @@ const StyledLink = styled.a`
   }
 `;
 
-const MainImg = styled.img`
+const MainImage = styled.img`
   width: 100%;
-  height: auto;
   object-fit: cover;
   border-radius: 6px;
   flex-grow: 1;
 `;
 
 const ProductBox = ({ title, images, linkText, linkUrl, onBoxClick }) => {
-  const hasMultiple = images && images.length > 1;
+  const multiple = Array.isArray(images) && images.length > 1;
 
   return (
-    <Wrapper>
+    <Container>
       <h3>{title}</h3>
-      {hasMultiple ? (
-        <GridLayout>
-          {images.map((item, idx) => (
-            <Thumbs key={idx} onClick={() => onBoxClick(item)}>
-              <img src={item.src} alt={item.alt || "Image"} />
-              {item.label && <p>{item.label}</p>}
-            </Thumbs>
+      {multiple ? (
+        <ImageGrid>
+          {images.map((img, i) => (
+            <ThumbItem key={i} onClick={() => onBoxClick(img)}>
+              <img src={img.src} alt={img.alt || "Image"} />
+              {img.label ? <p>{img.label}</p> : null}
+            </ThumbItem>
           ))}
-        </GridLayout>
+        </ImageGrid>
       ) : (
-        images?.[0]?.src && (
-          <MainImg
+        images && images[0] && images[0].src ? (
+          <MainImage
             src={images[0].src}
             alt={images[0].alt || "Image"}
             onClick={() => onBoxClick(images[0])}
           />
-        )
+        ) : null
       )}
-      <StyledLink href={linkUrl}>{linkText}</StyledLink>
-    </Wrapper>
+      <LinkAnchor href={linkUrl}>{linkText}</LinkAnchor>
+    </Container>
   );
 };
 
