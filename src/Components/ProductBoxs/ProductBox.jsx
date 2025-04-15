@@ -1,23 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-const BoxCol = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: #fff;
+  background: white;
   padding: 15px 20px;
   min-width: 300px;
   max-width: 24%;
   min-height: 360px;
   height: 360px;
   box-sizing: border-box;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   z-index: 1;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 
   @media (max-width: 992px) {
     max-width: 48%;
-    min-height:400px;
+    min-height: 400px;
   }
 
   @media (max-width: 600px) {
@@ -25,14 +25,14 @@ const BoxCol = styled.div`
   }
 `;
 
-const ImgSet = styled.div`
+const GridLayout = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
   flex-grow: 1;
 `;
 
-const ImgBox = styled.div`
+const Thumbs = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,18 +41,18 @@ const ImgBox = styled.div`
     width: 100%;
     max-width: 180px;
     height: auto;
-    border-radius: 4px;
     object-fit: contain;
+    border-radius: 4px;
   }
 
   p {
     font-size: 13px;
-    margin-top: 5px;
+    margin-top: 6px;
     text-align: left;
   }
 `;
 
-const Link = styled.a`
+const StyledLink = styled.a`
   font-size: 14px;
   color: #009999;
   font-weight: 500;
@@ -64,7 +64,7 @@ const Link = styled.a`
   }
 `;
 
-const StyledImg = styled.img`
+const MainImg = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -72,28 +72,32 @@ const StyledImg = styled.img`
   flex-grow: 1;
 `;
 
-const ProductBox = ({ title, images, linkText, linkUrl }) => {
-  const isMultiple = images && images.length > 1;
+const ProductBox = ({ title, images, linkText, linkUrl, onBoxClick }) => {
+  const hasMultiple = images && images.length > 1;
 
   return (
-    <BoxCol>
+    <Wrapper>
       <h3>{title}</h3>
-      {isMultiple ? (
-        <ImgSet>
-          {images.map((img, index) => (
-            <ImgBox key={index}>
-              <img src={img.src} alt={img.alt || "Image"} />
-              {img.label && <p>{img.label}</p>}
-            </ImgBox>
+      {hasMultiple ? (
+        <GridLayout>
+          {images.map((item, idx) => (
+            <Thumbs key={idx} onClick={() => onBoxClick(item)}>
+              <img src={item.src} alt={item.alt || "Image"} />
+              {item.label && <p>{item.label}</p>}
+            </Thumbs>
           ))}
-        </ImgSet>
+        </GridLayout>
       ) : (
         images?.[0]?.src && (
-          <StyledImg src={images[0].src} alt={images[0].alt || "Image"} />
+          <MainImg
+            src={images[0].src}
+            alt={images[0].alt || "Image"}
+            onClick={() => onBoxClick(images[0])}
+          />
         )
       )}
-      <Link href={linkUrl}>{linkText}</Link>
-    </BoxCol>
+      <StyledLink href={linkUrl}>{linkText}</StyledLink>
+    </Wrapper>
   );
 };
 

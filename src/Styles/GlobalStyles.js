@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 
 
 const GlobalStyles = createGlobalStyle`
-  /* CSS Reset */
+  
   *, *::before, *::after {
     margin: 0;
     padding: 0;

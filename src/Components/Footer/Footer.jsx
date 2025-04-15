@@ -2,33 +2,31 @@ import React from "react";
 import styled from "styled-components";
 import { TbWorld } from "react-icons/tb";
 
-// Footer container setup
+// Footer wrapper section (main container)
 const FooterWrapper = styled.footer`
   background-color: #131921;
   color: white;
+  font-size: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 20px;
 `;
 
-
+// Link groupings section (top half)
 const LinkSection = styled.div`
+  width: 85%;
+  padding: 40px 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 40px 50px;
-  width: 85%;
-  // background-color: #232f3e; // might revisit this later
+  // background-color: #232f3e; // might come back to this later
 
   @media (max-width: 700px) {
-    padding: 30px 20px;
-    
     flex-direction: column;
+    padding: 30px 20px;
     width: 100%;
   }
 `;
-
 
 const Column = styled.div`
   max-width: 200px;
@@ -44,29 +42,29 @@ const Heading = styled.h3`
 `;
 
 const FooterLink = styled.a`
-  display: block;
   font-size: 14px;
+  font-weight: 600;
   color: #ddd;
   margin: 10px 0;
+  display: block;
   text-decoration: none;
-  font-weight: 600;
 
   &:hover {
     text-decoration: underline;
   }
 `;
 
-
+// Lower section of footer
 const BottomFooter = styled.div`
+  background-color: #232f3e;
+  width: 100%;
+  padding: 25px 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 25px 50px;
-  background-color: #232f3e;
-  color: white;
-  width: 100%;
   flex-wrap: wrap;
   gap: 40px;
+  color: white;
 `;
 
 const FooterImg = styled.img`
@@ -77,15 +75,14 @@ const FooterImg = styled.img`
 const ButtonGroup = styled.div`
   display: flex;
   gap: 15px;
-  
 `;
 
 const FooterButton = styled.button`
-  background-color: transparent;
+  font-size: 12px;
+  background: transparent;
   color: #fff;
   border: 1px solid #d1d1d1;
   padding: 5px 10px;
-  font-size: 12px;
   cursor: pointer;
 
   &:hover {
@@ -93,7 +90,7 @@ const FooterButton = styled.button`
   }
 `;
 
-// Footer content structured into columns
+// Link data (split into four sections)
 const footerSections = [
   {
     title: "Get to Know Us",
@@ -120,7 +117,7 @@ const footerSections = [
     links: [
       "Amazon Business Card",
       "Shop with Points",
-      "About Amazon", // this is repeated — maybe an oversight?
+      "About Amazon", // duplicate left as-is; maybe someone missed this
       "Reload Your Balance",
       "Amazon Currency Converter",
     ],
@@ -137,18 +134,16 @@ const footerSections = [
   },
 ];
 
-
 const Footer = () => {
   return (
     <FooterWrapper>
-      {/* Top Links Section */}
       <LinkSection>
-        {footerSections.map((item, i) => (
+        {footerSections.map((section, i) => (
           <Column key={i}>
-            <Heading>{item.title}</Heading>
-            {item.links.map((text, j) => (
-              <FooterLink key={j} href="#">
-                {text}
+            <Heading>{section.title}</Heading>
+            {section.links.map((linkText, j) => (
+              <FooterLink href="#" key={j}>
+                {linkText}
               </FooterLink>
             ))}
           </Column>
@@ -157,10 +152,10 @@ const Footer = () => {
 
       <BottomFooter>
         <FooterImg src="/images/amazon_logo.png" alt="Amazon Logo" />
-
         <ButtonGroup>
           <FooterButton>
-            <TbWorld /> English
+            <TbWorld style={{ marginRight: "5px" }} />
+            English
           </FooterButton>
           <FooterButton>$ USD - US Dollar</FooterButton>
           <FooterButton>United States</FooterButton>

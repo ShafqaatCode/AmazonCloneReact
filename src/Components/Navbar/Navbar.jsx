@@ -40,6 +40,7 @@ const Navbar = () => {
       "Amazon Music",
       "Kindle E-readers & Books",
       "Amazon Appstore",
+      "New Products"
     ],
     "Shop by Department": [
       "Electroniscs",
