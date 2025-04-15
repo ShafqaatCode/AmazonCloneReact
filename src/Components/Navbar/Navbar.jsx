@@ -18,6 +18,7 @@ import {
   SidebarOverlay,
   SidebarHeader,
   SidebarSection,
+  CloseButton
 } from "./Navbar.styled.js";
 
 import amazonLogo from "../../assets/amazon_logo.png";
@@ -27,7 +28,8 @@ import searchIcon from "../../assets/search_icon.png";
 import usFlag from "../../assets/us_flag.png";
 import cartIcon from "../../assets/cart_icon.png";
 import Menu_Bars from "../../assets/menu_icon.png";
-import profileIcon from "../../assets/cart_icon.png"; // Add a profile icon in your assets
+import profileIcon from "../../assets/cart_icon.png";
+import { FaBars, FaUserCircle, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -85,14 +87,19 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Overlay */}
+      
       <SidebarOverlay isOpen={sidebarOpen} onClick={toggleSidebar} />
 
       {/* Sidebar */}
       <Sidebar isOpen={sidebarOpen}>
         <SidebarHeader>
-          <img src={profileIcon} alt="Profile" />
-          Hello, Sign In
+        <FaUserCircle size={24} />
+         
+         <span>Hello, Sign In</span>
+          
+          <CloseButton onClick={toggleSidebar}>
+            <FaTimes />
+          </CloseButton>
         </SidebarHeader>
 
         <SidebarSection>
@@ -134,10 +141,7 @@ const Navbar = () => {
             <li>Movies & Television</li>
             <li>Pet Supplies</li>
             <li>Software</li>
-            <li>Sports and Outdoors</li>
-            <li>Tools & Home Improvement</li>
-            <li>Toys and Games</li>
-            <li>Video Games</li>
+          
             <li>
               <strong>See All</strong>
             </li>

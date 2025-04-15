@@ -283,6 +283,9 @@ export const SidebarSection = styled.div`
         background-color: #f0f0f0;
         padding-left: 25px; /* subtle slide-in effect */
       }
+        .span{
+        margin-left:5px;
+        }
 
       .arrow {
         font-size: 14px;
@@ -290,5 +293,38 @@ export const SidebarSection = styled.div`
         font-weight:600;
       }
     }
+  }
+`;
+
+export const TopBar = styled.div`
+  height: 60px;
+  background-color: #131921;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 22px;
+  }
+`;
+
+export const CloseButton = styled.button`
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+
+  &:hover {
+    color: red;
   }
 `;
