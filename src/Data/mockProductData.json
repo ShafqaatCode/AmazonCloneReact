@@ -1,0 +1,53 @@
+[
+    {
+      "name": "Prime Video",
+      "description": "Watch exclusive movies, series, and live events with Prime membership.",
+      "image": "https://via.placeholder.com/400x250?text=Prime+Video"
+    },
+    {
+      "name": "Amazon Music",
+      "description": "Stream millions of songs and curated playlists without ads.",
+      "image": "https://via.placeholder.com/400x250?text=Amazon+Music"
+    },
+    {
+      "name": "Kindle E-readers & Books",
+      "description": "Browse thousands of Kindle books and enjoy reading anywhere.",
+      "image": "https://via.placeholder.com/400x250?text=Kindle+E-Readers"
+    },
+    {
+      "name": "Amazon Appstore",
+      "description": "Discover apps and games tailored for your Amazon devices.",
+      "image": "https://via.placeholder.com/400x250?text=Amazon+Appstore"
+    },
+    {
+      "name": "New Products",
+      "description": "Explore the latest releases across Amazon’s catalog.",
+      "image": "https://via.placeholder.com/400x250?text=New+Products"
+    },
+    {
+      "name": "Gift Cards",
+      "description": "Give the gift of choice with Amazon Gift Cards for any occasion.",
+      "image": "https://via.placeholder.com/400x250?text=Gift+Cards"
+    },
+    {
+      "name": "Amazon Live",
+      "description": "Watch livestreams featuring your favorite creators and products.",
+      "image": "https://via.placeholder.com/400x250?text=Amazon+Live"
+    },
+    {
+      "name": "Amazon Second Chance",
+      "description": "Recycle, trade in, or buy refurbished items on Amazon Second Chance.",
+      "image": "https://via.placeholder.com/400x250?text=Second+Chance"
+    },
+    {
+      "name": "Your Account",
+      "description": "Access and manage your orders, preferences, and more.",
+      "image": "https://via.placeholder.com/400x250?text=Your+Account"
+    },
+    {
+      "name": "Customer Services",
+      "description": "Need help? Find FAQs, order support, and live chat options here.",
+      "image": "https://via.placeholder.com/400x250?text=Customer+Service"
+    }
+  ]
+  

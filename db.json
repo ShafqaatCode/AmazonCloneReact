@@ -1,0 +1,292 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "label": "Chair",
+      "src": "/images/passets/boxSet1.jpg",
+      "price": 49.99,
+      "category": "Furniture",
+      "description": "Ergonomic chair for long sitting sessions.",
+      "stars": 4.3
+    },
+    {
+      "id": 2,
+      "label": "Keyboard",
+      "src": "/images/passets/boxSet3.jpg",
+      "price": 29.99,
+      "category": "Accessories",
+      "description": "Mechanical RGB gaming keyboard.",
+      "stars": 4.5
+    },
+    {
+      "id": 3,
+      "label": "Headphones",
+      "src": "/images/passets/boxSet2.jpg",
+      "price": 79.99,
+      "category": "Electronics",
+      "description": "Wireless noise-cancelling headphones.",
+      "stars": 4.7
+    },
+    {
+      "id": 4,
+      "label": "Mouse",
+      "src": "/images/passets/boxSet4.jpg",
+      "price": 19.99,
+      "category": "Accessories",
+      "description": "Precision gaming mouse with LED lighting.",
+      "stars": 4.2
+    },
+    {
+      "id": 5,
+      "label": "WoodBed",
+      "src": "/images/passets/bed1.jpg",
+      "price": 199.99,
+      "category": "Home",
+      "description": "Classic wooden bed frame with modern design.",
+      "stars": 4.6
+    },
+    {
+      "id": 6,
+      "label": "IronBed",
+      "src": "/images/passets/bed2.jpg",
+      "price": 179.99,
+      "category": "Home",
+      "description": "Sturdy iron bed with vintage charm.",
+      "stars": 4.4
+    },
+    {
+      "id": 7,
+      "label": "LargeBed",
+      "src": "/images/passets/bed3.jpg",
+      "price": 299.99,
+      "category": "Home",
+      "description": "Spacious king-size bed with storage.",
+      "stars": 4.8
+    },
+    {
+      "id": 8,
+      "label": "TileBed",
+      "src": "/images/passets/bed4.jpg",
+      "price": 249.99,
+      "category": "Home",
+      "description": "Modern bed frame with tiled headboard.",
+      "stars": 4.5
+    },
+    {
+      "id": 9,
+      "label": "Nails",
+      "src": "/images/passets/beauty-1.jpg",
+      "price": 5.99,
+      "category": "Beauty",
+      "description": "Shiny and colorful nail kit.",
+      "stars": 4.1
+    },
+    {
+      "id": 10,
+      "label": "SkinCare",
+      "src": "/images/passets/beauty-2.jpg",
+      "price": 15.49,
+      "category": "Beauty",
+      "description": "Daily skincare kit with natural ingredients.",
+      "stars": 4.7
+    },
+    {
+      "id": 11,
+      "label": "Makeups",
+      "src": "/images/passets/beauty-3.jpg",
+      "price": 22.0,
+      "category": "Beauty",
+      "description": "Makeup essentials for daily use.",
+      "stars": 4.3
+    },
+    {
+      "id": 12,
+      "label": "Fragrance",
+      "src": "/images/passets/beauty-4.jpg",
+      "price": 35.0,
+      "category": "Beauty",
+      "description": "Long-lasting fragrance with floral notes.",
+      "stars": 4.6
+    },
+    {
+      "id": 13,
+      "label": "WatchY",
+      "src": "/images/passets/watch1.jpg",
+      "price": 99.99,
+      "category": "Watches",
+      "description": "Premium wristwatch with stylish finish.",
+      "stars": 4.0
+    },
+    {
+      "id": 14,
+      "label": "RolexY",
+      "src": "/images/passets/watch2.jpg",
+      "price": 499.99,
+      "category": "Watches",
+      "description": "Luxury Rolex-style timepiece.",
+      "stars": 4.9
+    },
+    {
+      "id": 15,
+      "label": "StevenY",
+      "src": "/images/passets/watch3.jpg",
+      "price": 89.99,
+      "category": "Watches",
+      "description": "Elegant silver-tone analog watch.",
+      "stars": 4.1
+    },
+    {
+      "id": 16,
+      "label": "ClassicWatch",
+      "src": "/images/passets/watch4.jpg",
+      "price": 110.0,
+      "category": "Watches",
+      "description": "Classic analog watch with leather strap.",
+      "stars": 4.3
+    },
+    {
+      "id": 17,
+      "label": "apperls",
+      "src": "/images/passets/beauty-1.jpg",
+      "price": 19.99,
+      "category": "Gaming Merchandise",
+      "description": "Cool gamer-themed t-shirts and more.",
+      "stars": 4.2
+    },
+    {
+      "id": 18,
+      "label": "hats",
+      "src": "/images/passets/beauty-2.jpg",
+      "price": 12.99,
+      "category": "Gaming Merchandise",
+      "description": "Snapback hats with gaming logos.",
+      "stars": 4.3
+    },
+    {
+      "id": 19,
+      "label": "action figuers",
+      "src": "/images/passets/beauty-3.jpg",
+      "price": 29.99,
+      "category": "Gaming Merchandise",
+      "description": "Collectible action figures from games.",
+      "stars": 4.6
+    },
+    {
+      "id": 20,
+      "label": "Mugs",
+      "src": "/images/passets/beauty-4.jpg",
+      "price": 9.49,
+      "category": "Gaming Merchandise",
+      "description": "Gaming-themed ceramic coffee mugs.",
+      "stars": 4.4
+    },
+    {
+      "id": 21,
+      "label": "ride on|s",
+      "src": "/images/passets/watch1.jpg",
+      "price": 69.99,
+      "category": "Toys",
+      "description": "Ride-on toy vehicles for kids.",
+      "stars": 4.2
+    },
+    {
+      "id": 22,
+      "label": "Buildings",
+      "src": "/images/passets/watch2.jpg",
+      "price": 45.99,
+      "category": "Toys",
+      "description": "Building block sets for kids and adults.",
+      "stars": 4.5
+    },
+    {
+      "id": 23,
+      "label": "Swim pools",
+      "src": "/images/passets/watch3.jpg",
+      "price": 59.99,
+      "category": "Toys",
+      "description": "Inflatable swimming pools for summer fun.",
+      "stars": 4.3
+    },
+    {
+      "id": 24,
+      "label": "Dolls",
+      "src": "/images/passets/watch4.jpg",
+      "price": 29.99,
+      "category": "Toys",
+      "description": "Classic dolls with changeable outfits.",
+      "stars": 4.6
+    },
+    {
+      "id": 25,
+      "label": "NewSupplies",
+      "src": "/images/box2-1.jpg",
+      "price": 15.99,
+      "category": "Stationery",
+      "description": "Fresh collection of school & office supplies.",
+      "stars": 4.4
+    },
+    {
+      "id": 26,
+      "label": "TeddyBears",
+      "src": "/images/box1-3.jpg",
+      "price": 25.0,
+      "category": "Toys",
+      "description": "Soft and cuddly teddy bears for all ages.",
+      "stars": 4.8
+    },
+    {
+      "id": 27,
+      "label": "PetCare",
+      "src": "/images/box2-3.jpg",
+      "price": 12.99,
+      "category": "Pet Supplies",
+      "description": "Essential grooming and feeding accessories.",
+      "stars": 4.3
+    },
+    {
+      "id": 28,
+      "label": "Mobiles",
+      "src": "/images/box2-2.jpg",
+      "price": 399.99,
+      "category": "Electronics",
+      "description": "Latest mobile devices and accessories.",
+      "stars": 4.6
+    },
+    {
+      "id": 29,
+      "label": "Stationary",
+      "src": "/images/passets/mainRow1.jpg",
+      "price": 8.99,
+      "category": "Stationery",
+      "description": "Pens, papers, and creative tools.",
+      "stars": 4.2
+    },
+    {
+      "id": 30,
+      "label": "GameSet",
+      "src": "/images/passets/mainRow3.jpg",
+      "price": 65.99,
+      "category": "Gaming",
+      "description": "Get into the game with this full setup.",
+      "stars": 4.5
+    },
+    {
+      "id": 31,
+      "label": "MothersGift",
+      "src": "/images/passets/sb1.jpg",
+      "price": 32.00,
+      "category": "Gifts",
+      "description": "Perfect gifts to show love and appreciation.",
+      "stars": 4.7
+    },
+    {
+      "id": 32,
+      "label": "JoyBasket",
+      "src": "/images/passets/sb2.jpg",
+      "price": 28.50,
+      "category": "Gifts",
+      "description": "Celebrate every moment with joyful surprises.",
+      "stars": 4.6
+    }
+  ]
+}

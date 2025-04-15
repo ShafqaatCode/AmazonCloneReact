@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import ProductBox from "./ProductBox";
-import { useState } from "react";
 import ProductModal from "./ProductModel";
+
 const BoxRowWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -12,8 +12,7 @@ const BoxRowWrapper = styled.div`
 
   ${({ isTop }) =>
     isTop &&
-    `
-    margin-top: -230px;
+    `margin-top: -230px;
     z-index: 100;
   `}
 
@@ -27,28 +26,74 @@ const BoxRow = ({ boxes, isTop }) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  const handleBoxClick = (product) => {
-    setSelectedProduct(product);
-    setShowModal(true);
+  const handleBoxClick = async (clickedImage) => {
+    if (!clickedImage.label) return;
+  
+    try {
+      const response = await fetch(
+        `https://67fec93958f18d7209ef4e43.mockapi.io/db?label=${encodeURIComponent(clickedImage.label)}`
+      );
+      const data = await response.json();
+  
+      // Log the response to see its structure
+      console.log("API response:", data);
+  
+      if (Array.isArray(data) && data.length > 0) {
+        // When data is an array and contains products
+        const matched = data.find((item) => item.label === clickedImage.label);
+  
+        if (matched) {
+          setSelectedProduct(matched); // Set the selected product
+        } else {
+          setSelectedProduct({
+            ...clickedImage,
+            price: "N/A",
+            category: "Unknown",
+          });
+        }
+      } else {
+        // If the response is not as expected, handle it gracefully
+        setSelectedProduct({
+          ...clickedImage,
+          price: "N/A",
+          category: "Unknown",
+        });
+      }
+  
+      setShowModal(true); // Show the modal
+    } catch (err) {
+      console.error("API fetch error:", err);
+    }
   };
+  
 
   const handleCloseModal = () => {
     setSelectedProduct(null);
     setShowModal(false);
   };
+
   return (
     <>
       <BoxRowWrapper isTop={isTop}>
         {boxes.map((box, index) => (
-          <ProductBox key={index} {...box} onBoxClick={handleBoxClick}/>
+          <ProductBox key={index} {...box} onBoxClick={handleBoxClick} />
         ))}
       </BoxRowWrapper>
 
-      <ProductModal
-        show={showModal}
-        onClose={handleCloseModal}
-        product={selectedProduct}
-      />
+      {selectedProduct && (
+        <ProductModal
+          show={showModal}
+          onClose={handleCloseModal}
+          product={{
+            src: selectedProduct.src,
+            label: selectedProduct.label,
+            price: selectedProduct.price,
+            category: selectedProduct.category,
+            description: selectedProduct.description,
+            stars: selectedProduct.stars,
+          }}
+        />
+      )}
     </>
   );
 };

@@ -1,66 +1,65 @@
 import React from "react";
 import styled from "styled-components";
 
-const Backdrop = styled.div`
+const Overlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
-//   border:2px solid green;
 `;
 
-const Box = styled.div`
-  background: #fff;
+const Modal = styled.div`
+  background: white;
   border-radius: 10px;
-  padding: 20px;
-  width: 90%;
+  padding: 25px;
   max-width: 500px;
+  width: 90%;
   text-align: center;
-  border:2px solid red;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 `;
 
-const Image = styled.img`
+const ModalImage = styled.img`
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
+  margin-bottom: 15px;
 `;
 
-const Button = styled.button`
-  margin-top: 16px;
-  background-color: #009999;
-  color: #fff;
+const CloseButton = styled.button`
+  margin-top: 20px;
+  background: #009999;
   border: none;
-  padding: 10px 22px;
-  border-radius: 6px;
+  padding: 10px 20px;
+  color: white;
   font-weight: bold;
   cursor: pointer;
+  border-radius: 6px;
 `;
 
 const ProductModal = ({ show, onClose, product }) => {
-  if (!show || !product) {
-    return null;
-  }
 
-  const title = product.label ? product.label : `Title : ${product.src}`;
-  const imgSrc = product.src;
-  const imgAlt = product.alt || "Product";
+    <pre>{JSON.stringify(product, null, 2)}</pre>
+
+  if (!show || !product) return null;
 
   return (
-    <Backdrop onClick={onClose}>
-      <Box onClick={(e) => e.stopPropagation()}>
-        <Image src={imgSrc} alt={imgAlt} />
-        <h3>{title}</h3>
-        <p>This is a demo description for the selected products. .</p>
-        <p>Price: 100$</p>
-        <Button onClick={onClose}>Close</Button>
-      </Box>
-    </Backdrop>
+    <Overlay onClick={onClose}>
+      <Modal onClick={(e) => e.stopPropagation()}>
+        <ModalImage src={product.src} alt={product.label || "Product"} />
+        <h3>{product.label}</h3>
+        {product.stars && <p><strong>Rating:</strong> {product.stars} ⭐</p>}
+      <div>  {product.description && <p style={{ fontStyle: "italic", marginBottom: "10px" }}>{product.description}</p>}</div>
+        {product.price && <p><strong>Price:</strong> ${product.price}</p>}
+        {product.category && <p><strong>Category:</strong> {product.category}</p>}
+        <CloseButton onClick={onClose}>Close</CloseButton>
+      </Modal>
+    </Overlay>
   );
 };
 
