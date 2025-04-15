@@ -7,58 +7,78 @@ const Overlay = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 1000;
 `;
 
-const Modal = styled.div`
-  background: white;
-  border-radius: 10px;
-  padding: 25px;
-  max-width: 500px;
+const ModalBox = styled.div`
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px;
   width: 90%;
+  max-width: 480px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
   text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 `;
 
-const ModalImage = styled.img`
+const ProductPic = styled.img`
   width: 100%;
-  border-radius: 8px;
+  height: auto;
+  border-radius: 10px;
   object-fit: cover;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 `;
 
-const CloseButton = styled.button`
-  margin-top: 20px;
-  background: #009999;
+const CloseBtn = styled.button`
+  background-color: #007b7b;
+  color: #fff;
   border: none;
-  padding: 10px 20px;
-  color: white;
-  font-weight: bold;
+  padding: 10px 22px;
+  font-size: 14px;
+  border-radius: 5px;
   cursor: pointer;
-  border-radius: 6px;
+  margin-top: 25px;
+
+  &:hover {
+    background-color: #005f5f;
+  }
 `;
 
 const ProductModal = ({ show, onClose, product }) => {
-
-    <pre>{JSON.stringify(product, null, 2)}</pre>
-
   if (!show || !product) return null;
 
   return (
     <Overlay onClick={onClose}>
-      <Modal onClick={(e) => e.stopPropagation()}>
-        <ModalImage src={product.src} alt={product.label || "Product"} />
-        <h3 className="my-5 bg-red-200">{product.label}</h3>
-        {product.stars && <p><strong>Rating:</strong> {product.stars} ⭐</p>}
-      <div className="bg-red-400">  {product.description && <p style={{ fontStyle: "italic", marginBottom: "10px" }}>{product.description}</p>}</div>
-        {product.price && <p><strong>Price:</strong> ${product.price}</p>}
-        {product.category && <p><strong>Category:</strong> {product.category}</p>}
-        <CloseButton onClick={onClose}>Close</CloseButton>
-      </Modal>
+      <ModalBox onClick={(e) => e.stopPropagation()}>
+        <ProductPic src={product.src} alt={product.label || "Product"} />
+        <h3>{product.label || "Unnamed Product"}</h3>
+        {product.stars && (
+          <p style={{ marginTop: '8px' }}>
+            <strong>Rating:</strong> {product.stars} ⭐
+          </p>
+        )}
+        {product.description && (
+          <p style={{ fontStyle: "italic", marginTop: '12px' }}>
+            {product.description}
+          </p>
+        )}
+        {product.price ? (
+          <p style={{ marginTop: '10px' }}>
+            <strong>Price:</strong> ${product.price}
+          </p>
+        ) : (
+          <p style={{ color: "#999" }}>Price not listed</p>
+        )}
+        {product.category && (
+          <p style={{ marginTop: '6px' }}>
+            <strong>Category:</strong> {product.category}
+          </p>
+        )}
+        <CloseBtn onClick={onClose}>Close</CloseBtn>
+      </ModalBox>
     </Overlay>
   );
 };
