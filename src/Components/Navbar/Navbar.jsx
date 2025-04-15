@@ -27,14 +27,14 @@ import dropdownIcon from "../../assets/dropdown_icon.png";
 import searchIcon from "../../assets/search_icon.png";
 import usFlag from "../../assets/us_flag.png";
 import cartIcon from "../../assets/cart_icon.png";
-import Menu_Bars from "../../assets/menu_icon.png";
+import menuIcon from "../../assets/menu_icon.png";
 import profileIcon from "../../assets/cart_icon.png";
 import { FaBars, FaUserCircle, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
-  const sidebarData = {
+  const navSections = {
     "Digital Content & Devices": [
       "Prime Video",
       "Amazon Music",
@@ -83,98 +83,40 @@ const Navbar = () => {
     ],
   };
 
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const handleSidebarToggle = () => {
+    setIsSidebarVisible(prev => !prev);
+  };
 
   return (
     <>
-      
-      <SidebarOverlay isOpen={sidebarOpen} onClick={toggleSidebar} />
+      <SidebarOverlay isOpen={isSidebarVisible} onClick={handleSidebarToggle} />
 
-      {/* Sidebar */}
-      <Sidebar isOpen={sidebarOpen}>
+      <Sidebar isOpen={isSidebarVisible}>
         <SidebarHeader>
-        <FaUserCircle size={24} />
-         
-         <span>Hello, Sign In</span>
-          
-          <CloseButton onClick={toggleSidebar}>
+          <FaUserCircle size={24} />
+          <span>Hello, Sign In</span>
+          <CloseButton onClick={handleSidebarToggle}>
             <FaTimes />
           </CloseButton>
         </SidebarHeader>
 
-        <SidebarSection>
-          <h4>Digital Content & Devices</h4>
-          <ul>
-            <li>
-              Prime Video <span className="arrow">{">"}</span>
-            </li>
-            <li>
-              Amazon Music <span className="arrow">{">"}</span>
-            </li>
-            <li>
-              Kindle E-readers & Books <span className="arrow">{">"}</span>
-            </li>
-            <li>
-              Amazon Appstore <span className="arrow">{">"}</span>
-            </li>
-          </ul>
-        </SidebarSection>
-
-        <SidebarSection>
-          <h4>Shop by Department</h4>
-          <ul>
-            <li>Electronics</li>
-            <li>Computers</li>
-            <li>Smart Home</li>
-            <li>Arts & Crafts</li>
-            <li>Automotive</li>
-            <li>Baby</li>
-            <li>Beauty and Personal Care</li>
-            <li>Women's Fashion</li>
-            <li>Men's Fashion</li>
-            <li>Girls' Fashion</li>
-            <li>Boys' Fashion</li>
-            <li>Health and Household</li>
-            <li>Home and Kitchen</li>
-            <li>Industrial and Scientific</li>
-            <li>Luggage</li>
-            <li>Movies & Television</li>
-            <li>Pet Supplies</li>
-            <li>Software</li>
-          
-            <li>
-              <strong>See All</strong>
-            </li>
-          </ul>
-        </SidebarSection>
-
-        <SidebarSection>
-          <h4>Programs & Features</h4>
-          <ul>
-            <li>Gift Cards</li>
-            <li>Shop By Interest</li>
-            <li>Amazon Live</li>
-            <li>International Shopping</li>
-            <li>Amazon Second Chance</li>
-            <li>
-              <strong>See All</strong>
-            </li>
-          </ul>
-        </SidebarSection>
-
-        <SidebarSection>
-          <h4>Help & Settings</h4>
-          <ul>
-            <li>Your Account</li>
-            <li>English</li>
-            <li>United States</li>
-            <li>Customer Service</li>
-            <li>Sign In</li>
-          </ul>
-        </SidebarSection>
+        {Object.entries(navSections).map(([title, links]) => (
+          <SidebarSection key={title}>
+            <h4>{title}</h4>
+            <ul>
+              {links.map((item, idx) => (
+                <li key={`${item}-${idx}`}>
+                  {item.includes("See all") ? <strong>{item}</strong> : item}
+                  {title === "Digital Content & Devices" &&
+                    idx < 4 &&
+                    <span className="arrow">{">"}</span>}
+                </li>
+              ))}
+            </ul>
+          </SidebarSection>
+        ))}
       </Sidebar>
 
-      {/* Main Nav */}
       <Nav>
         <a href="/">
           <Logo src={amazonLogo} alt="Amazon Logo" />
@@ -216,16 +158,15 @@ const Navbar = () => {
           <h1>& Orders</h1>
         </NavText>
 
-        <NavCart href="">
+        <NavCart href="#">
           <img src={cartIcon} width="35px" alt="Cart" />
           <h4>Cart</h4>
         </NavCart>
       </Nav>
 
-      {/* Bottom Nav */}
       <NavBottom>
-        <NavBottomItem onClick={toggleSidebar}>
-          <img src={Menu_Bars} alt="menu" />
+        <NavBottomItem onClick={handleSidebarToggle}>
+          <img src={menuIcon} alt="menu" />
           <NavBottomText>All</NavBottomText>
         </NavBottomItem>
         <NavBottomText>Today's Deals</NavBottomText>

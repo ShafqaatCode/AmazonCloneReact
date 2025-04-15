@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-
-
 const FooterNav = styled.nav`
   background-color: #232f3e;
   padding: 40px 20px 20px;
-  color: #fff;
+  color: white;
 `;
 
 const FooterWrapper = styled.div`
@@ -15,22 +13,21 @@ const FooterWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  // border:2px solid red;
+  // border: 2px solid red; // debugging layout
 `;
 
 const Column = styled.ul`
   list-style: none;
-  
-  padding: 0;
   margin: 10px 15px;
+  padding: 0;
   flex: 1 1 200px;
-  // border:2px solid red;
   min-width: 180px;
+  // border: 2px dashed orange;
 `;
 
 const FooterItem = styled.li`
   margin-bottom: 14px;
-  // border:2px solid pink;
+  // border: 1px dotted pink;
 `;
 
 const FooterLink = styled.a`
@@ -53,22 +50,22 @@ const LinkHeading = styled.h5`
 const LinkText = styled.span`
   display: block;
   font-size: 12px;
-  line-height: 1.5;
   color: #ddd;
+  line-height: 1.5;
 `;
 
-
 const FooterLegal = styled.div`
-  text-align: center;
-  font-size: 12px;
-  color: #ccc;
-  border-top: 1px solid #3a4553;
   margin-top: 40px;
   padding-top: 20px;
+  border-top: 1px solid #3a4553;
+  color: #ccc;
+  font-size: 12px;
+  text-align: center;
 `;
 
 const LegalLinks = styled.div`
   margin-bottom: 10px;
+
   a {
     color: #ccc;
     text-decoration: none;
@@ -80,20 +77,15 @@ const LegalLinks = styled.div`
   }
 `;
 
-// ============ Text Wrapping Utility ============
-
+// I was trying to split long footer text but maybe not needed anymore
 // const splitTextTwoWords = (text) => {
 //   const words = text.split(/\s+/);
 //   const lines = [];
-
 //   for (let i = 0; i < words.length; i += 2) {
 //     lines.push(words.slice(i, i + 2).join(" "));
 //   }
-
 //   return lines;
 // };
-
-// ============ Full Footer Data ============
 
 const amazonFooterData = [
   [
@@ -236,21 +228,17 @@ const amazonFooterData = [
   ],
 ];
 
-
-
 const AmazonStyledFooter = () => {
   return (
     <FooterNav role="navigation" aria-label="More on Amazon">
       <FooterWrapper>
-        {amazonFooterData.map((column, colIndex) => (
-          <Column key={colIndex}>
-            {column.map((item, i) => (
+        {amazonFooterData.map((column, idx) => (
+          <Column key={idx}>
+            {column.map((link, i) => (
               <FooterItem key={i}>
-                <FooterLink href={item.href}>
-                  <LinkHeading>{item.heading}</LinkHeading>
-                  <LinkText>
-                    {item.text}
-                  </LinkText>
+                <FooterLink href={link.href}>
+                  <LinkHeading>{link.heading}</LinkHeading>
+                  <LinkText>{link.text}</LinkText>
                 </FooterLink>
               </FooterItem>
             ))}
@@ -260,11 +248,12 @@ const AmazonStyledFooter = () => {
 
       <FooterLegal>
         <LegalLinks>
-          <a href="#">Conditions of Use</a>|<a href="#">Privacy Notice</a>|
+          <a href="#">Conditions of Use</a>|
+          <a href="#">Privacy Notice</a>|
           <a href="#">Consumer Health Data Privacy Disclosure</a>|
           <a href="#">Your Ads Privacy Choices</a>
         </LegalLinks>
-        <div>© 1996–2025, Amazon.com, Inc. or its affiliates shafqaat</div>
+        <div>© 1996–2025, Amazon.com, Inc. or its affiliates — shafqaat</div>
       </FooterLegal>
     </FooterNav>
   );
