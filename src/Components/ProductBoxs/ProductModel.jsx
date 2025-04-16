@@ -73,6 +73,11 @@ const Para = styled.p`
 // align-items:center;
   gap: 20px;
   text-transform: Capitalize;
+
+  @media screen (max-width: 600px)
+  {
+    justify-content: space-between;
+  }
 `;
 
 const GreyText = styled(Para)`
@@ -90,8 +95,34 @@ color:#777
 font-size:1.2rem;
 `;
 
+const AddToCart = styled.button`
+ background: #333;
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 28px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #222;
+  }
+
+
+`
+
+
 const ProductModal = ({ show, onClose, product }) => {
   if (!show ) return null;
+
+
+  const MessageAdded = () => {
+    alert("Added to Cart")
+  }
 
   const stopBubbling = (e) => e.stopPropagation();
 
@@ -109,12 +140,13 @@ const ProductModal = ({ show, onClose, product }) => {
         )}
 
         {product.description && (
-          <Para style={{ fontStyle: "italic" }}>{product.description}</Para>
+          <Para>{product.description}</Para>
         )}
 
         {product.price ? (
           <Para>
-            <strong>Price:</strong> ${product.price}
+            <strong>Price:</strong> ${product.price} 
+            
           </Para>
         ) : (
           <GreyText>Price not listed</GreyText>
@@ -126,6 +158,7 @@ const ProductModal = ({ show, onClose, product }) => {
           </Para>
         )}
 
+        <AddToCart onClick={MessageAdded}>Add To Cart</AddToCart>
         <ExitButton onClick={onClose}>Close</ExitButton>
       </Box>
     </FullscreenOverlay>
