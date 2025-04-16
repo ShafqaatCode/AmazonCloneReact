@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FaTimes, FaStar } from "react-icons/fa";
+// import { FaTimes, FaStar } from "react-icons/fa";
 const FullscreenOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -63,23 +63,22 @@ const Heading = styled.h3`
 `;
 
 const Para = styled.p`
-//   border: 2px solid red;
- border-bottom:1px solid black;
- padding:10px 0;
+  //   border: 2px solid red;
+  border-bottom: 1px solid black;
+  padding: 10px 0;
   margin: 5px 0;
   font-size: 1rem;
   color: #444;
   display: flex;
   // justify-content: space-between;
-// align-items:center;
+  // align-items:center;
   gap: 20px;
   text-transform: Capitalize;
 
-  @media (max-width: 900px)
-  {
-    &{
-    margin: 8px 0;
-    justify-content: space-between;
+  @media (max-width: 900px) {
+    & {
+      margin: 8px 0;
+      justify-content: space-between;
     }
   }
 `;
@@ -100,7 +99,7 @@ font-size:1.2rem;
 `;
 
 const AddToCart = styled.button`
- background: #333;
+  background: #333;
   color: #fff;
   border: none;
   padding: 12px 26px;
@@ -111,30 +110,24 @@ const AddToCart = styled.button`
   margin-top: 28px;
   margin-right: 10px;
   transition: all 0.3s ease;
- 
 
   &:hover {
     background: #222;
   }
-
-
-`
-
+`;
 
 const ProductModal = ({ show, onClose, product }) => {
-  if (!show ) return null;
-
+  if (!show) return null;
 
   const MessageAdded = () => {
-    alert("Added to Cart")
-  }
+    alert("Added to Cart");
+  };
 
   const stopBubbling = (e) => e.stopPropagation();
 
   return (
     <FullscreenOverlay onClick={onClose}>
       <Box onClick={stopBubbling}>
-       
         <ImagePreview src={product.src} alt={product.label || "Product"} />
         <Heading className="">{product.label || "Unnamed Product"}</Heading>
 
@@ -144,14 +137,11 @@ const ProductModal = ({ show, onClose, product }) => {
           </Para>
         )}
 
-        {product.description && (
-          <Para>{product.description}</Para>
-        )}
+        {product.description && <Para>{product.description}</Para>}
 
         {product.price ? (
           <Para>
-            <strong>Price:</strong> ${product.price} 
-            
+            <strong>Price:</strong> ${product.price}
           </Para>
         ) : (
           <GreyText>Price not listed</GreyText>
