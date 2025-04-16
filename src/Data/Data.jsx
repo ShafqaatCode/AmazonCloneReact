@@ -1,37 +1,37 @@
 // kids section
 export const kidsimages = [
-  "/images/passets/kids1.jpg",
-  "/images/passets/kids2.jpg",
-  "/images/passets/kids3.jpg",
-  "/images/passets/kids4.jpg",
-  "/images/passets/kids5.jpg",
-  "/images/passets/kids6.jpg",
-  "/images/product1-3.jpg",
-  "/images/product1-4.jpg",
-  "/images/product1-5.jpg",
-  "/images/product1-6.jpg"
+  "/images/passets/kids1.jpg", // Game Board
+  "/images/passets/kids2.jpg", // Dragon Toys
+  "/images/passets/kids3.jpg", // Camel Up Game
+  "/images/passets/kids4.jpg", // UNO Toys
+  "/images/passets/kids5.jpg",  //Super Timps
+  "/images/passets/kids6.jpg", // Toy Car Collection
+  "/images/product1-3.jpg", // Glasses
+  "/images/product1-4.jpg", // Fire Cover
+  "/images/product1-5.jpg", // Jucies Gallases
+  "/images/product1-6.jpg" // Safety Helmet
 ];
 
 // top pakistani
 export const TopPakistani = [
-  "/images/TopPakistani/tp1.jpg",
-  "/images/TopPakistani/tp2.jpg",
-  "/images/TopPakistani/tp3.jpg",
-  "/images/TopPakistani/tp4.jpg",
-  "/images/TopPakistani/tp9.jpg",
-  "/images/TopPakistani/tp6.jpg",
-  "/images/TopPakistani/tp7.jpg",
-  "/images/TopPakistani/tp8.jpg"
+  "/images/TopPakistani/tp1.jpg", //add this name to db json  "Drums"
+  "/images/TopPakistani/tp2.jpg", // Drilling Machine 
+  "/images/TopPakistani/tp3.jpg", // Cooker
+  "/images/TopPakistani/tp4.jpg", // Safe Lock
+  "/images/TopPakistani/tp9.jpg",  //Pot
+  "/images/TopPakistani/tp6.jpg", //Gaming Chair
+  "/images/TopPakistani/tp7.jpg", // Baby Chair 
+  "/images/TopPakistani/tp8.jpg"  // Exercise Dumbles
 ];
 
 // top games
 export const TopGames = [
-  "/images/VideoGames/vg1.jpg",
-  "/images/VideoGames/vg2.jpg",
-  "/images/VideoGames/vg3.jpg",
-  "/images/VideoGames/vg4.jpg",
-  "/images/VideoGames/vg5.jpg",
-  "/images/VideoGames/vg6.jpg"
+  "/images/VideoGames/vg1.jpg", // Full HD Display ACER
+  "/images/VideoGames/vg2.jpg", // Super Smash Bros Game
+  "/images/VideoGames/vg3.jpg", // Famous Bluey Game
+  "/images/VideoGames/vg4.jpg", // PS5 Indiangens Game
+  "/images/VideoGames/vg5.jpg", // Dolls 
+  "/images/VideoGames/vg6.jpg" // Super Tips Kids Toys
 ];
 
 // general boxes
@@ -154,6 +154,7 @@ export const GamingMerchandise = [
       { src: "/images/passets/watch2.jpg", label: "Buildings" },
       { src: "/images/passets/watch3.jpg", label: "Swim pools" },
       { src: "/images/passets/watch4.jpg", label: "Dolls" }
+      // { src: "/images/passets/watch4.jpg", label: "Dolls" }
     ],
     linkText: "Shop More",
     linkUrl: "/"

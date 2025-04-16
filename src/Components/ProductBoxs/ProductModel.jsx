@@ -29,7 +29,10 @@ const ModalBox = styled.div`
 `;
 
 const ProductPic = styled.img`
-  width: 100%;
+  width:80%;
+  max-height:360px;
+
+  margin:auto;
   height: auto;
   border-radius: 14px;
   object-fit: cover;
@@ -77,7 +80,7 @@ const ProductModal = ({ show, onClose, product }) => {
   return (
     <Overlay onClick={onClose}>
       <ModalBox onClick={(e) => e.stopPropagation()}>
-        <ProductPic src={product.src} alt={product.label || "Product"} />
+        <ProductPic  src={product.src} alt={product.label || "Product"} />
         <Title>{product.label || "Unnamed Product"}</Title>
 
         {product.stars && (

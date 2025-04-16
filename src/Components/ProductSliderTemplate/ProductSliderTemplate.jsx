@@ -22,15 +22,33 @@ const ProductSliderTemplate = ({ title, images }) => {
       scrollRef.current.scrollLeft += 300;
     }
   };
-
-  const openModalWithImage = (imgSrc) => {
-    setModalItem({
-      src: imgSrc,
-      label: 'Slider Image',
-      alt: 'Image from slider',
-    });
-    setIsModalOpen(true);
+  const openModalWithImage = async (imgSrc) => {
+    try {
+      const response = await fetch(
+        `https://67fec93958f18d7209ef4e43.mockapi.io/db?src=${encodeURIComponent(imgSrc)}`
+      );
+      const data = await response.json();
+  
+      if (data.length > 0) {
+        setModalItem(data[0]);
+      } else {
+        setModalItem({
+          src: imgSrc,
+          label: "Unknown Product",
+          price: "N/A",
+          category: "Unknown",
+          description: "No description available.",
+          stars: "-"
+        });
+      }
+  
+      setIsModalOpen(true);
+    } catch (err) {
+      console.error("Failed to fetch modal data by src:", err);
+    }
   };
+  
+  
 
   const closeModal = () => {
     setIsModalOpen(false);
