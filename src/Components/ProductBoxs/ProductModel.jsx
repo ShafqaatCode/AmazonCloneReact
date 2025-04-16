@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-
+import React from "react";
+import styled from "styled-components";
+import { FaTimes, FaStar } from "react-icons/fa";
 const FullscreenOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -13,7 +13,7 @@ const FullscreenOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
-`
+`;
 
 const Box = styled.div`
   background: #fff;
@@ -25,18 +25,18 @@ const Box = styled.div`
   text-align: center;
   font-family: "Inter", sans-serif;
   transition: transform 0.3s ease;
-`
+`;
 
 const ImagePreview = styled.img`
   width: 80%;
-  max-height: 360px;
+  max-height: 340px;
   margin: auto;
   height: auto;
   border-radius: 14px;
   object-fit: cover;
   margin-bottom: 22px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-`
+`;
 
 const ExitButton = styled.button`
   background: #333;
@@ -53,35 +53,54 @@ const ExitButton = styled.button`
   &:hover {
     background: #222;
   }
-`
+`;
 
 const Heading = styled.h3`
   font-size: 22px;
   font-weight: 600;
   color: #2c2c2c;
   margin-bottom: 12px;
-`
+`;
 
 const Para = styled.p`
+//   border: 2px solid red;
+
   margin: 10px 0;
-  font-size: 15px;
+  font-size: 1.2rem;
   color: #444;
-`
+  display: flex;
+  justify-content: center;
+// align-items:center;
+  gap: 20px;
+  text-transform: Capitalize;
+`;
 
 const GreyText = styled(Para)`
   color: #999;
-`
+`;
+
+const CloseButton = styled.button`
+
+position:absolute;
+top:1rem;
+right:1rem;
+background: none;
+cursor:pointer;
+color:#777
+font-size:1.2rem;
+`;
 
 const ProductModal = ({ show, onClose, product }) => {
-  if (!show || !product) return null
+  if (!show ) return null;
 
-  const stopBubbling = (e) => e.stopPropagation()
+  const stopBubbling = (e) => e.stopPropagation();
 
   return (
     <FullscreenOverlay onClick={onClose}>
       <Box onClick={stopBubbling}>
+       
         <ImagePreview src={product.src} alt={product.label || "Product"} />
-        <Heading>{product.label || "Unnamed Product"}</Heading>
+        <Heading className="">{product.label || "Unnamed Product"}</Heading>
 
         {product.stars && (
           <Para>
@@ -110,7 +129,7 @@ const ProductModal = ({ show, onClose, product }) => {
         <ExitButton onClick={onClose}>Close</ExitButton>
       </Box>
     </FullscreenOverlay>
-  )
-}
+  );
+};
 
-export default ProductModal
+export default ProductModal;
