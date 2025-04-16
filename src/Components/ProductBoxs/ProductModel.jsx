@@ -19,7 +19,7 @@ const Box = styled.div`
   background: #fff;
   border-radius: 16px;
   padding: 36px 28px;
-  width: 90%;
+  width: 85%;
   max-width: 460px;
   box-shadow: 0 25px 40px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -70,7 +70,7 @@ const Para = styled.p`
   font-size: 1rem;
   color: #444;
   display: flex;
-  // justify-content: space-between;
+  justify-content: center;
   // align-items:center;
   gap: 20px;
   text-transform: Capitalize;
