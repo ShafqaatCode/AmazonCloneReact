@@ -64,7 +64,8 @@ const Heading = styled.h3`
 
 const Para = styled.p`
 //   border: 2px solid red;
-
+ border-bottom:1px solid black;
+ padding:10px 0;
   margin: 5px 0;
   font-size: 1rem;
   color: #444;
@@ -110,6 +111,7 @@ const AddToCart = styled.button`
   margin-top: 28px;
   margin-right: 10px;
   transition: all 0.3s ease;
+ 
 
   &:hover {
     background: #222;
