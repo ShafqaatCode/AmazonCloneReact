@@ -65,8 +65,8 @@ const Heading = styled.h3`
 const Para = styled.p`
 //   border: 2px solid red;
 
-  margin: 10px 0;
-  font-size: 1.2rem;
+  margin: 5px 0;
+  font-size: 1rem;
   color: #444;
   display: flex;
   justify-content: center;
