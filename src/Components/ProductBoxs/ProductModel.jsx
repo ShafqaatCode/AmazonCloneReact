@@ -69,14 +69,17 @@ const Para = styled.p`
   font-size: 1rem;
   color: #444;
   display: flex;
-  justify-content: center;
+  // justify-content: space-between;
 // align-items:center;
   gap: 20px;
   text-transform: Capitalize;
 
-  @media screen (max-width: 600px)
+  @media (max-width: 900px)
   {
+    &{
+    margin: 8px 0;
     justify-content: space-between;
+    }
   }
 `;
 
