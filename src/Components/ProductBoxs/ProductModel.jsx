@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
-const Overlay = styled.div`
+const FullscreenOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -9,15 +9,14 @@ const Overlay = styled.div`
   height: 100vh;
   background: rgba(30, 30, 30, 0.6);
   backdrop-filter: blur(4px);
-//   border:2px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-`;
+`
 
-const ModalBox = styled.div`
-  background: #ffffff;
+const Box = styled.div`
+  background: #fff;
   border-radius: 16px;
   padding: 36px 28px;
   width: 90%;
@@ -26,21 +25,20 @@ const ModalBox = styled.div`
   text-align: center;
   font-family: "Inter", sans-serif;
   transition: transform 0.3s ease;
-`;
+`
 
-const ProductPic = styled.img`
-  width:80%;
-  max-height:360px;
-
-  margin:auto;
+const ImagePreview = styled.img`
+  width: 80%;
+  max-height: 360px;
+  margin: auto;
   height: auto;
   border-radius: 14px;
   object-fit: cover;
   margin-bottom: 22px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-`;
+`
 
-const CloseBtn = styled.button`
+const ExitButton = styled.button`
   background: #333;
   color: #fff;
   border: none;
@@ -55,62 +53,64 @@ const CloseBtn = styled.button`
   &:hover {
     background: #222;
   }
-`;
+`
 
-const Title = styled.h3`
+const Heading = styled.h3`
   font-size: 22px;
   font-weight: 600;
   color: #2c2c2c;
   margin-bottom: 12px;
-`;
+`
 
-const Text = styled.p`
+const Para = styled.p`
   margin: 10px 0;
   font-size: 15px;
   color: #444;
-`;
+`
 
-const Muted = styled(Text)`
+const GreyText = styled(Para)`
   color: #999;
-`;
+`
 
 const ProductModal = ({ show, onClose, product }) => {
-  if (!show || !product) return null;
+  if (!show || !product) return null
+
+  const stopBubbling = (e) => e.stopPropagation()
 
   return (
-    <Overlay onClick={onClose}>
-      <ModalBox onClick={(e) => e.stopPropagation()}>
-        <ProductPic  src={product.src} alt={product.label || "Product"} />
-        <Title>{product.label || "Unnamed Product"}</Title>
+    <FullscreenOverlay onClick={onClose}>
+      <Box onClick={stopBubbling}>
+        <ImagePreview src={product.src} alt={product.label || "Product"} />
+        <Heading>{product.label || "Unnamed Product"}</Heading>
 
         {product.stars && (
-          <Text>
+          <Para>
             <strong>Rating:</strong> {product.stars} ⭐
-          </Text>
+          </Para>
         )}
 
         {product.description && (
-          <Text style={{ fontStyle: "italic" }}>{product.description}</Text>
+          <Para style={{ fontStyle: "italic" }}>{product.description}</Para>
         )}
 
         {product.price ? (
-          <Text>
+          <Para>
             <strong>Price:</strong> ${product.price}
-          </Text>
+          </Para>
         ) : (
-          <Muted>Price not listed</Muted>
+          <GreyText>Price not listed</GreyText>
         )}
 
         {product.category && (
-          <Text>
+          <Para>
             <strong>Category:</strong> {product.category}
-          </Text>
+          </Para>
         )}
 
-        <CloseBtn onClick={onClose}>Close</CloseBtn>
-      </ModalBox>
-    </Overlay>
-  );
-};
+        <ExitButton onClick={onClose}>Close</ExitButton>
+      </Box>
+    </FullscreenOverlay>
+  )
+}
 
-export default ProductModal;
+export default ProductModal
